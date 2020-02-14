@@ -1,3 +1,5 @@
+import TreeIcon from '../icons/tree-palm.svg';
+
 class Tree {
   constructor(animal, probability) {
     this.animal = animal;
@@ -22,6 +24,8 @@ class Tree {
   getAnimals = () => this.animals;
 
   hasAnimal = () => this.probability > Math.random();
+
+  getGraphic = () => TreeIcon;
 }
 
 export default Tree;

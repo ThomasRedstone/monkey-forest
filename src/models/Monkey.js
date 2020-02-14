@@ -1,3 +1,5 @@
+import MonkeyIcon from '../icons/monkey.svg';
+
 /**
  * The Monkeys are simple creatures, they have two sexes, true and false, when they attempt to breed
  * the monkeys must be of opposite sexes. If they are, then each of their fertility scores, and
@@ -10,6 +12,8 @@ class Monkey {
   }
 
   getSex = () => this.sex;
+
+  getGraphic = () => MonkeyIcon;
 
   breed(potentialMate) {
     if(this.sex === potentialMate.sex) {
