@@ -17,9 +17,13 @@ describe('Monkey', function () {
     expect(() => primary.breed(partner)).toThrow(/Breeding outcome is less than 1/);
   });
 
-  it('Returns a new monkey when two monkeys attempt to breed and succeed', () => {
+  it('returns a new monkey when two monkeys attempt to breed and succeed', () => {
     mockMath.random = () => 0.95;
     expect(primary.breed(partner))
       .toMatchObject(expect.objectContaining({ sex: true, fertility: 0.95, getSex: expect.anything() }));
   });
+
+  it('returns the monkeys sex correctly', () => {
+    expect(primary.getSex()).toEqual(true);
+  })
 });
