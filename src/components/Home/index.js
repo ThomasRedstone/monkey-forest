@@ -1,6 +1,6 @@
-import monkey from "../icons/monkey.svg";
+import monkey from "../../icons/monkey.svg";
 import {Link} from "react-router-dom";
-import routes from "../config/routes";
+import routes from "../../config/routes";
 import React from "react";
 
 const Home = () => (
