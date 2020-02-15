@@ -6,6 +6,7 @@ global.Math = mockMath;
 
 const primary = new Monkey(true, 0.7);
 const partner = new Monkey(false, 0.7);
+const poorPartner = new Monkey(false, 0.01);
 const incompatible = new Monkey(true, 0.8);
 
 describe('Monkey', function () {
@@ -14,7 +15,8 @@ describe('Monkey', function () {
   });
 
   it('Throws an error when two monkeys attempt to breed but fail', () => {
-    expect(() => primary.breed(partner)).toThrow(/Breeding outcome is less than 1/);
+    mockMath.random = () => 0.001;
+    expect(() => primary.breed(poorPartner)).toThrow(/Breeding outcome is less than /);
   });
 
   it('returns a new monkey when two monkeys attempt to breed and succeed', () => {

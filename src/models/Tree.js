@@ -5,12 +5,12 @@ import TreeIcon from '../icons/tree-palm.svg';
  * tree will have an animal in it, or we can be given our list of animals
  */
 class Tree {
-  constructor(animal, probability, animals = undefined) {
+  constructor(animal, probability, animals = true) {
     this.animal = animal;
     this.probability = probability;
     this.validate();
-    this.animals = animals || [];
-    if(!animals && this.hasAnimal()) {
+    this.animals = typeof animals === "boolean" ? [] : animals;
+    if(animals === true && this.hasAnimal()) {
       this.animals.push(new this.animal(Math.random() > 0.5, Math.random()));
     }
   }

@@ -8,8 +8,9 @@ import styles from "./Forest.module.css";
 import {useInterval} from "../../helpers/useInterval";
 
 const Forest = () => {
-  const [forest, setForest] = useState(new ForestModel(5, Monkey, Tree, 5));
-  useInterval(() => setForest(forest.shuffle()), 1000);
+  const [forest, setForest] = useState(new ForestModel(5, Monkey, Tree, 25));
+  const [delay, setDelay] = useState(1000);
+  useInterval(() => setForest(forest.shuffle()), delay);
   return (
     <React.Fragment>
       <header className="Forest-header">
@@ -23,10 +24,15 @@ const Forest = () => {
           (row, key) => <div className={styles.row} key={key}>{
             row.map((column, key) =>
               <div className={styles.square} key={key}>
-                <div className={styles.habitat}>
-                  <img src={column.getGraphic()}/>
+                <div className={styles.column}>
+                  <img className={styles.habitat} src={column.getGraphic()}/>
                   {column.getAnimals().length ? column.getAnimals().map((animal, key) =>
-                    <img className={styles.animal} src={animal.getGraphic()} key={key}/>) : null}
+                    <img
+                      className={styles.animal}
+                      src={animal.getGraphic()}
+                      key={key}
+                      style={{marginLeft: `${key * 25}%`}}
+                    />) : null}
                 </div>
               </div>
             )
