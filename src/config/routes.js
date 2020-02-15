@@ -4,5 +4,6 @@
  */
 export default {
     home: '/',
-    forest: '/forest'
+    forest: '/forest',
+    coverage: '/coverage'
 };

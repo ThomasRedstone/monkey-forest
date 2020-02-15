@@ -12,6 +12,7 @@ const Home = () => (
     <Link to={routes.forest}>
       Enter, if you dare
     </Link>
+    <p>Or checkout the <a href={routes.coverage}>code coverage results</a></p>
   </header>
 );
 
