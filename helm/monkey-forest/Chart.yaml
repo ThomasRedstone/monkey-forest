@@ -1,0 +1,6 @@
+apiVersion: v2
+name: monkey-forest
+description: Helm chart for monkey-forest
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
